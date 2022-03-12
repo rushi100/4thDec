@@ -1,0 +1,47 @@
+package pomClasses;
+
+public class KiteLoginPage {
+
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.support.FindBy;
+	import org.openqa.selenium.support.PageFactory;
+
+
+
+		//Declration
+		@FindBy(xpath="//input[@type='text']") public WebElement uId;
+		
+		@FindBy(xpath="//input[@name='pass']") public WebElement psw;
+		
+		@FindBy(xpath="//button[@value='1']") public WebElement btn;
+		
+		     //Intilization  
+		     //here we call Constructor object
+		LoginPagePOM(WebDriver driver){
+			
+	        //object passing
+			PageFactory.initElements(driver,this);
+		}
+		
+		     //usage
+		public  void setUserId(String uname) 
+		{
+			uId.sendKeys(uname);
+			
+		}
+		
+		public void setPassword(String pass)
+		{
+			psw.sendKeys(pass);
+			
+		}
+		
+		public void clickLoginBtn() {
+			btn.click();
+		}
+		
+	}
+
+	
+
